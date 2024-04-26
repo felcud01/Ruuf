@@ -1,0 +1,76 @@
+#paneles solare
+while True:
+    print("introdusca una opcion")
+    opcion= int(input("1. techos rectangulares. \n2. techos triangulares. \n3. techos con dos rectangulos. \n4. salir. \n"))
+    if opcion == 4:
+        print( "hasta luego") 
+        break
+
+    elif opcion == 1:
+
+        #largo y ancho de los paneles y el techo
+        ac = int(input( "introdusca el largo del panel : "))
+        bc = int(input( "introdusca el el ancho del panel : "))
+        yc = int(input( "introdusca el largo del techo : "))
+        xc = int(input( "introdusca el ancho del techo : "))
+
+        #calculos del metro cuadrado del panel y el techo
+        panel_c = ac*bc
+        techo_c = yc*xc
+
+        #total de paneles
+        cantidad_paneles_c = techo_c/panel_c
+
+        #respuesta para el usuario
+        print("la cantidad de tableros que caben en el techo son : " cantidad_paneles_c)
+        
+    elif opcion == 2:
+
+        #techo triangular
+        at = int(input( "introdusca el largo del panel : "))
+        bt = int(input( "introdusca el el ancho del panel : "))
+        yt = int(input( "introdusca el largo del techo : "))
+        xt = int(input( "introdusca el ancho del techo : "))
+
+        #calculos del metro cuadrado del panel y el techo
+        panel_t = at*bt
+        techo_t = 0.5*xt*yt
+
+        #total de paneles
+        cantidad_paneles_t = techo_t/panel_t
+
+        #respuesta para el usuario
+        print("la cantidad de tableros que caben en el techo son : " int(cantidad_paneles_t))
+
+    elif opcion == 3:
+
+        #largo y ancho de los paneles y el techo
+        ad = int(input( "introdusca el largo del panel : "))
+        bd = int(input( "introdusca el el ancho del panel : "))
+        yd = int(input( "introdusca el largo del techo total : "))
+        xd = int(input( "introdusca el ancho del techo total : "))
+        yd1 = int(input( "introdusca el largo del techo 1 : "))
+        xd1 = int(input( "introdusca el ancho del techo 1 : "))
+        yd2 = int(input( "introdusca el largo del techo 2 : "))
+        xd2 = int(input( "introdusca el ancho del techo 2 : "))
+
+        #calcular vacios
+        v1 = (yd-yd1)*(xd-xd2)
+        v2 = (yd-yd2)*(xd-xd1)
+
+        #vacio total
+        vt = v1+v2
+
+        #calculos del metro cuadrado del panel y el techo
+        panel_d = ad*bd
+        techo_d = yd*xd
+        techo_d_total = techo_d-vt
+
+        #total de paneles
+        cantidad_paneles_d = techo_d_total/panel_d
+
+        #respuesta para el usuario
+        print("la cantidad de tableros que caben en el techo son : " int(cantidad_paneles_d))
+    
+    else:
+        print("opcion no valida.\nseleccione una opcion valida")
